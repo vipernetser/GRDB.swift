@@ -1,4 +1,10 @@
 // Import C SQLite functions
+#if os(Linux)
+import Glibc
+#else
+import Darwin
+#endif
+
 #if SWIFT_PACKAGE
 import GRDBSQLite
 #elseif GRDBCIPHER
